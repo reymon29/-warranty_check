@@ -7,6 +7,7 @@
       <%= f.input :remote, as: :boolean %>
       <%= f.input :stand, as: :boolean %>
       <%= f.input :damage, as: :boolean %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit %>
       <% end %>
     </div>
