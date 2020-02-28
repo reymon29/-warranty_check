@@ -15,7 +15,7 @@ class WarrantyReturn < ApplicationRecord
     csv_file = CSV.generate(headers: true) do |csv|
       csv << attributes
       all.each do |return_item|
-        csv << [return_item.rma_no, return_item.remote, return_item.stand, return_item.damage, return_item.images.present? ? "Yes" : "No", return_item.created_at ]
+        csv << [return_item.rma_no, return_item.remote, return_item.stand, return_item.damage, return_item.box_type, return_item.images.present? ? "Yes" : "No", return_item.created_at ]
       end
     end
   end

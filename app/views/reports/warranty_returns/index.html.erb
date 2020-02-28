@@ -17,6 +17,7 @@
               <th scope="col">Remote</th>
               <th scope="col">Stand</th>
               <th scope="col">Damage</th>
+              <th scope="col">Box Type</th>
               <th scope="col">Images</th>
             </tr>
           </thead>
@@ -27,6 +28,7 @@
               <td><%= warranty_item.remote %></td>
               <td><%= warranty_item.stand %></td>
               <td><%= warranty_item.damage %></td>
+              <td><%= warranty_item.box_type %></td>
               <td><%= warranty_item.images.present? ? "Yes" : "No" %></td>
             </tr>
             <% end %>

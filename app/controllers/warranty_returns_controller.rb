@@ -54,7 +54,7 @@ class WarrantyReturnsController < ApplicationController
   end
 
   def warranty_params
-    params.require(:warranty_return).permit(:rma_no, :remote, :stand, :damage, images_attributes: [:image, :warranty_return_id])
+    params.require(:warranty_return).permit(:rma_no, :remote, :stand, :damage, :box_type, images_attributes: [:image, :warranty_return_id])
   end
 
 
