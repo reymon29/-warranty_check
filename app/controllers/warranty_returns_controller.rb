@@ -8,11 +8,17 @@ class WarrantyReturnsController < ApplicationController
 
   def new
     @warranty = WarrantyReturn.new
+    @image = @warranty.images.build
   end
 
   def create
     @warranty = WarrantyReturn.new(warranty_params)
     if @warranty.save
+      if params[:images]
+        params[:images].each do |image|
+          @warranty.images.create(image: image)
+        end
+      end
       flash[:notice] = "Saved next return"
       redirect_to new_warranty_return_path
     else
@@ -36,7 +42,7 @@ class WarrantyReturnsController < ApplicationController
   end
 
   def warranty_params
-    params.require(:warranty_return).permit(:rma_no, :remote, :stand, :damage, photos: [])
+    params.require(:warranty_return).permit(:rma_no, :remote, :stand, :damage, images_attributes: [:image, :warranty_return_id])
   end
 
 
