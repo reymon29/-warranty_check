@@ -46,6 +46,7 @@ class WarrantyReturnsController < ApplicationController
   def destroy
   end
 
+
   private
 
   def claim_id_find

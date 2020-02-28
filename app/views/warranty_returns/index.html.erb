@@ -3,11 +3,5 @@
     <div class="new_button col">
       <%= link_to "New", new_warranty_return_path %>
     </div>
-    <div class="item col-auto">
-      <h4>My returns</h4>
-      <% @warranty.each do |item| %>
-        <%= item.rma_no %> - <%= link_to "Open", warranty_return_path(item)  %>
-      <% end %>
-    </div>
   </div>
 </div>
