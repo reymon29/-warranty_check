@@ -1,15 +1,1 @@
-<div class="container">
-  <div class="row">
-    <h4>Create Return</h4>
-    <div class="col-auto">
-      <%= simple_form_for @warranty do |f| %>
-      <%= f.input :rma_no %>
-      <%= f.input :remote, as: :boolean %>
-      <%= f.input :stand, as: :boolean %>
-      <%= f.input :damage, as: :boolean %>
-      <%= f.input :images,  as: :file, input_html: { multiple: true, name: "images[]" }, hint: "Upload photos accepted formats jpg jpeg gif png." %>
-      <%= f.submit %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render "form" %>

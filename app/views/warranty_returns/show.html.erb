@@ -10,5 +10,6 @@
       <%= cl_image_tag image.image, height: 300, width: 400, crop: :fill %>
       <% end %>
     </div>
+    <%= link_to "Edit", edit_warranty_return_path(@warranty), class: "btn btn-warning" %>
   </div>
 </div>

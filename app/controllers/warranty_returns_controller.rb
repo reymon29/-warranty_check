@@ -30,6 +30,17 @@ class WarrantyReturnsController < ApplicationController
   end
 
   def update
+    if @warranty.update(warranty_params)
+      if params[:images]
+        params[:images].each do |image|
+          @warranty.images.create(image: image)
+        end
+      end
+      flash[:notice] = "Saved return"
+      redirect_to warranty_return_path(@warranty)
+    else
+      render :edit
+    end
   end
 
   def destroy
